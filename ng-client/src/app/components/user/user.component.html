@@ -1,6 +1,9 @@
 <div>
-    <button>
-        <img />
-        <span>NAME</span>
+    <button><!--calling imagePatha as a property because it has been defined as a getter method-->
+        <img 
+        [src]="imagePath"
+        [alt]="selectedUser.name"
+        /><!--property binding-->
+        <span>{{selectedUser.name}}</span><!--dynamically displaying the users information-->
     </button>
 </div>
