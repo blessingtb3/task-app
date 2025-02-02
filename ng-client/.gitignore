@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignore user profile images
+*.png
+*.jpg
+*.jpeg
+*.gif
