@@ -3,8 +3,8 @@
         <!--calling imagePatha as a property because it has been defined as a getter method-->
         <img 
         [src]="imagePath"
-        [alt]="name"
+        [alt]="name()"
         /><!--property binding-->
-        <span>{{name}}</span><!--dynamically displaying the users information-->
+        <span>{{name()}}</span><!--dynamically displaying the users information-->
     </button>
 </div>
