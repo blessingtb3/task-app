@@ -1,4 +1,4 @@
-import { Component, computed, Input, input} from '@angular/core';
+import { Component, computed, EventEmitter, Input, input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -14,20 +14,20 @@ export class UserComponent {
 
 
   //adding a decorator to the class that tells Angular that this class is a component and adds metadata to it
-  //@Input({required: true}) avatar!: string;
-  //@Input({required: true}) name!: string;
-  avatar = input.required<string>();
-  name = input.required<string>();
+  @Input({required: true}) id!: string;
+  @Input({required: true}) avatar!: string;
+  @Input({required: true}) name!: string;
+  @Output() select = new EventEmitter();
 
-
-  //imagePath signal - trackable data containers, more effecient 
-  imagePath = computed(() => {
-    return '../../assets/users/' + this.avatar();
-  });
-  
+  //get image path for user avatar
+  get imagePath() {
+    return '../../assets/users/' + this.avatar;
+  }
 
   
-  onSelecUser(){}
+  onSelecUser(){
+    this.select.emit();
+  }
 
 }
 
