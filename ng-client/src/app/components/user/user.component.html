@@ -1,5 +1,6 @@
 <div>
-    <button><!--calling imagePatha as a property because it has been defined as a getter method-->
+    <button (click)="onSelecUser()"><!--using event listeners and executing code when they occur-->
+        <!--calling imagePatha as a property because it has been defined as a getter method-->
         <img 
         [src]="imagePath"
         [alt]="selectedUser.name"

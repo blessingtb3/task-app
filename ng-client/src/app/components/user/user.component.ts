@@ -19,4 +19,10 @@ export class UserComponent {
   get imagePath(){
     return '../../assets/users/' + this.selectedUser.avatar;
   }
+
+  //managing state of the user component by changing the selected user every time the button is clicked
+  onSelecUser(){
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[randomIndex];
+  }
 }
