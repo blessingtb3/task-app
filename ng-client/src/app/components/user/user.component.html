@@ -1,10 +1,10 @@
 <div>
-    <button (click)="onSelecUser()"><!--using event listeners and executing code when they occur-->
+    <button (click)="onSelecUser()"><!--using event listeners(binding) and executing code when they occur-->
         <!--calling imagePatha as a property because it has been defined as a getter method-->
         <img 
-        [src]="imagePath()"
-        [alt]="selectedUser().name"
+        [src]="imagePath"
+        [alt]="name"
         /><!--property binding-->
-        <span>{{selectedUser().name}}</span><!--dynamically displaying the users information-->
+        <span>{{name}}</span><!--dynamically displaying the users information-->
     </button>
 </div>
