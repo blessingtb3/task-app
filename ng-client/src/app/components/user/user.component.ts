@@ -13,20 +13,20 @@ import { Component, computed, EventEmitter, Input, input, Output} from '@angular
 export class UserComponent {
 
 
-  //adding a decorator to the class that tells Angular that this class is a component and adds metadata to it
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) name!: string;
-  @Output() select = new EventEmitter();
+  // Adding a decorator to the class that tells Angular that this class is a component and adds metadata to it
+  @Input({required: true}) id!: string; // Input property to receive the user ID from a parent component
+  @Input({required: true}) avatar!: string; // Input property to receive the user avatar from a parent component
+  @Input({required: true}) name!: string; // Input property to receive the user name from a parent component
+  @Output() select = new EventEmitter(); // Using the event emitter to emit custom values through the select property to any parent component that is interested
 
-  //get image path for user avatar
+  // Get image path for user avatar
   get imagePath() {
-    return '../../assets/users/' + this.avatar;
+    return '../../assets/users/' + this.avatar; // Constructing the path to the user's avatar image
   }
 
-  
-  onSelecUser(){
-    this.select.emit();
+  // Method to handle user selection
+  onSelecUser() {
+    this.select.emit(this.id); // Emitting this ID on the selected user
   }
 
 }
